@@ -55,22 +55,19 @@ function begin() {
     .on('keyup', confirmPasswordEvent)
     .on('keyup', formStateEvent);
   formStateEvent();
-}
-$(document).ready(begin);
 
-$(document).ready(function() {    
   $('#getstarted').click(function() {        
-    /* Captura de datos escrito en los inputs*/        
-    var userName = document.getElementById('exampleInputUsername').value;
-    var email = document.getElementById('exampleInputEmail1').value;
-    var password = document.getElementById('exampleInputPassword1').value;
+  /* Captura de datos escrito en los inputs */
+    var $username = $('#exampleInputUsername').val();        
+    var $email = $('#exampleInputEmail1').val();
+    var $password = $('#exampleInputPassword1').val();
     /* Guardando los datos en el LocalStorage*/
-    localStorage.setItem('User Name', userName);
-    localStorage.setItem('Email', email);
-    localStorage.setItem('Password', password);
+    localStorage.setItem('User Name', $userName);
+    localStorage.setItem('Email', $email);
+    localStorage.setItem('Password', $password);
     /* Limpiando los campos o inputs*/
-    document.getElementById('exampleInputUsername').value = '';
-    document.getElementById('exampleInputEmail1').value = '';
-    document.getElementById('exampleInputPassword1').value = '';
+    $username.value('');
+    $email.val('');
+    $password.val('');
   });   
-}); 
+}
